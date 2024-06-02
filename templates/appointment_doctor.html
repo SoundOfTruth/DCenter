@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+    <div class="clinics_list">
+            {% for doctor in doctors %}
+        <div class="list_item">
+        <li><a href="/appointment/{{path}}/{{doctor.id}}"><b>{{doctor.fullname}}</b></a></li>
+                {% endfor %}
+            </div>
+    </div>
+{% endblock %}

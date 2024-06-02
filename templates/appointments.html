@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+<div>
+     <div class="t">
+         {% for key in appointments.keys() %}
+         <div class="t headers">
+             <b>{{ key }}</b>
+         </div>
+         {% endfor %}
+     </div>
+     <div class="t">
+         {% for key in appointments %}
+         <div class="tc">
+             {% for f_key in appointments[key].keys() %}
+             	{% if f_key[0]=='0' -%}
+             <div class="t gray-values">
+                 <a>{{ appointments[key][f_key] }}</a>
+             </div>
+             	{% else -%}
+             <div class="t green-values">
+                 <a href="{{f_key}}">{{ appointments[key][f_key] }}</a>
+             </div>
+             	{% endif -%}
+             {% endfor %}
+         </div>
+         {% endfor %}
+     </div>
+ </div>
+{% endblock %}

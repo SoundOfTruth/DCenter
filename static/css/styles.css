@@ -1,0 +1,203 @@
+html, body { 
+	font-family: 'Arial';
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+a {
+	color: #102634;
+	text-decoration: none;
+}
+
+.clear {clear: both;}
+
+ul.mainmenu {
+	list-style: none;
+	background: #102634;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	color: #fdc073;
+	font-size: 20px;
+	overflow: hidden;
+}
+ul.mainmenu li {
+	float: left;
+	margin: 18px 40px 0 50px;
+}
+ul.mainmenu li.last {float: right;}
+
+ul.mainmenu li a {
+	color: #E3E4E6;
+	text-decoration: none;
+}
+ul.mainmenu li a:hover {
+	color: #C2EAFF;
+}
+div.content {
+	margin: 10px;
+}
+.form-contact label {
+	display: inline-block; 
+	min-width: 80px;
+}
+.form-contact p {margin: 10px 0 10px 0;}
+.form-contact input[type=submit], textarea {
+	font-size: 16px;
+}
+.flash {padding: 10px;}
+.flash.success {
+	border: 1px solid #21DB56;
+	background: #AEFFC5;
+}
+.flash.error {
+	border: 1px solid #FF4343;
+	background: #FF9C9C;
+}
+ul.list-posts {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-width: 600px;
+}
+ul.list-posts li {
+	margin: 20px 0 0 0;
+	border: 1px solid #eee;
+}
+ul.list-posts .title {
+	margin: 0;
+	padding: 5px;
+	background: #eee;
+}
+ul.list-posts .annonce {
+	margin: 0;
+	padding: 10px 5px 10px 5px;
+}
+
+
+.t {
+  display: flex;
+  flex-direction: row;
+  margin: 3px;
+  width: 40px;
+}
+
+.tc {
+  display: flex;
+  flex-direction: column;
+}
+
+.green-values {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #9BFFD2;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.green-values:hover {
+  border-color: #646cff;
+}
+.green-values:focus,
+.green-values:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+.gray-values {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #B9CBCF;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.gray-values:hover {
+  border-color: #646cff;
+}
+.gray-values:focus,
+.gray-values:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+.headers {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+}
+.title {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    font: inherit;
+    font-weight: 500;
+    color: #58595b;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px dotted #cccccc;
+    font-size: 26px;
+    line-height: 30px;
+}
+.fullname-doctor{
+    color: #58595b;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    font: inherit;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    border-bottom: 2px dotted #cccccc;
+}
+.photo-doctor{
+    color: #58595b;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    font: inherit;
+    float: left;
+    margin-right: 20px;
+}
+.field-wrap-doctor{
+    padding-bottom: 27px;
+    border-bottom: 2px dotted #cccccc;
+}
+.take-appointment{
+    margin: 0;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    background-color: #B9CBCF;
+    transition: all 0.3s;
+    display: inline-block;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3px;
+    vertical-align: top;
+    border-radius: 2px;
+    width: 95px;
+    padding: 4px 20px;
+    margin-right: 20px;
+    font-size: 12px;
+}
+.speciality-name{
+}
+.spec-table{
+}
+.about{
+
+}

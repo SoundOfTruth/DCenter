@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+    <form method="post" class="form-contact">
+        <p><label>ФИО: </label> <input type="text" name="username" value="" required  />
+        <p><label>Email: </label> <input type="email" name="email" value="" required  />
+        <p><label>Пароль: </label> <input type="password" name="password1" value="" required  />
+        <p><label>Повтор пароля: </label> <input type="password" name="password2" value="" required  />
+        <p><input type="submit" value="Зарегистрироваться" />
+        <hr align=left width="300px">
+        <p><a href="/login">Авторизация</a>
+    </form>
+{% endblock %}

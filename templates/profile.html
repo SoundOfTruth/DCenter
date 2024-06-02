@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+<h3>Ваши данные</h3>
+<p>ФИО: {{ user.fullname }}</p>
+<p>Почта: {{ user.email }}</p>
+<h3>Ваши записи на приём</h3>
+{% if is_empty -%}
+<p>У вас ещё нет записей на приём</p>
+	{% else -%}
+    {% for key in appointments.keys() %}
+<div class="user_appointment">
+{{appointments[key]}} <a href="{{key}}"><b>Отменить запись</b></a>
+        </div>
+    {% endfor %}
+<div>
+    	{% endif -%}
+    <p></p>
+            <a href="/logout"><b>Выйти из аккаунта</b></a>
+</div>
+{% endblock %}

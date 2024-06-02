@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+        {% for speciality in specialities %}
+        <details class="elements-header">
+                <summary class="speciality-name"><b>{{speciality.name}}</b></summary>
+        <table class="spec-table" border="1" width="700px">
+            <thead>
+                <tr>
+                    <th>Услуга</th>
+                    <th>Стоимость</th>
+                </tr>
+            </thead>
+            {% for service in speciality.services %}
+            <tbody align="center">
+                <tr>
+                        <td>{{service.name}}</td>
+                        <td>{{service.price}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </details>
+        {% endfor %}
+{% endblock %}

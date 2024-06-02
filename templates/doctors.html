@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super() }}
+    <div id="doctors-list">
+        {% for doctor in doctors %}
+        <div class="field-wrap-doctor">
+            <div class="main-field">
+                <div class="fullname-doctor"><h2>{{doctor.fullname}}</h2></div>
+                <div class="photo-doctor"> <img src={{doctor.photo_url}} width="140px" height="140px"></div>
+                <div class="speciality-doctor"><b>Отделение:</b> {{doctor.speciality}}</div>
+                <div class="qualification-doctor"><b>Должность</b>: {{doctor.qualification}}</div>
+                <div class="work-clinic"><b>Ведет прием в:</b> DCenter на {{doctor.clinic}}</div>
+                <div class="work-experience"><b>Опыт работы:</b> {{doctor.experience_years}}</div>
+                <div class="take-appointment"><a href="/appointment/{{doctor.clinic_id}}/{{doctor.speciality_id}}/{{doctor.id}}">Запись на приём</a></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
