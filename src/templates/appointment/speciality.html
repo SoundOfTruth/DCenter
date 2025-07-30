@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <h2 class="title">
+    Запись на приём
+  </h2>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<ul>
+  {% for speciality in specialities %}
+    <li>
+      <a href="{{request.path}}/speciality/{{speciality.id}}">
+        <b>{{speciality.name}}</b>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endblock %}

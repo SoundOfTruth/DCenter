@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <h2 class="title">
+    Специалисты
+  </h2>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+{% for doctor in doctors %}
+  <div class="doctor-card">
+    <div class="doctor__fullname">
+      <h2>{{doctor.fullname}}</h2>
+    </div>
+    <div class="doctor__info">
+      <div class="doctor__photo">
+        {% if not doctor.photo %}
+          <img src="{{ url_for('static', filename='default-doctor.jpg') }}">
+        {% else %}
+          <img src="{{ doctor.photo }}">
+        {% endif %}
+      </div>
+      <div class="doctor__text-info">
+        <span>
+          <b>Отделение:</b> {{doctor.speciality.name}}
+        </span>
+        <span>
+          <b>Должность</b>: {{doctor.qualification}}
+        </span>
+        <span>
+          <b>Ведет прием в:</b> DCenter на {{doctor.clinic.address}}
+        </span>
+        <span>
+          <b>Опыт работы:</b> {{doctor.experience}}
+        </span>
+        <a class="take-appointment"
+          href="{{  url_for('appointment.appointments', doctor_id=doctor.id) }}"
+        >
+          Записаться на приём
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,35 @@
+<header>
+  <nav>
+    <div class="nav">
+      <a href="{{ url_for('index.index') }}">
+        <div>О нас</div>
+      </a>
+    </div>
+    <div class="nav">
+      <a href="{{ url_for('index.prices') }}">
+        <div>Услуги и цены</div>
+      </a>
+    </div>
+    <div class="nav">
+      <a href="{{ url_for('index.doctors') }}">
+        <div>Специалисты</div>
+      </a>
+    </div>
+    <div class="nav">
+      <a href="{{ url_for('appointment.index') }}">
+        <div>Запись на приём</div>
+      </a>
+    </div>
+    <div class="nav">
+      {% if current_user.is_anonymous %}
+        <a href="{{ url_for('auth.login') }}">
+          <div>Авторизация</div>
+        </a>
+      {% else %}
+        <a href="{{ url_for('auth.profile') }}">
+          <div>Профиль</div>
+        </a>
+      {% endif %}
+    </div>
+  </nav>
+</header>

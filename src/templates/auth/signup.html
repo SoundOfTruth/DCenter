@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <h2 class="title">
+    Регистрация
+  </h2>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<div class="page">
+  <form method="post" class="auth-form">
+    <label>ФИО</label>
+    <input type="text" name="fullname" value="" required
+      placeholder="Введите ФИО"
+    />
+    <label>
+      Почта
+    </label>
+    <input type="email" name="email" value="" required
+      placeholder="Введите адресс электронной почты"
+    />
+    <label>
+      Пароль
+    </label>
+    <input type="password" name="password" value="" required
+      placeholder="Введите пароль"
+    />
+    <label>
+      Повтор пароля
+    </label>
+    <input type="password" name="repeat_password" value="" required
+      placeholder="Введите пароль"
+    />
+    <input type="submit" value="Зарегистрироваться" class="signup-button"/>
+    <div class="reffer-url">
+      <a href="{{ url_for('auth.login') }}">
+        Перейти к авторизации
+      </a>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,285 @@
+body{ 
+	font-family: 'Arial';
+  margin: 0px;
+  padding: 0px;
+  max-width: 100vw;
+  overflow-y: scroll;
+}
+
+main{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container{
+  max-width: 100vw;
+}
+
+.page{
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+}
+
+a{
+	color: #102634;
+	text-decoration: none;
+}
+
+ul{
+  margin-block-start: 0.5em;
+}
+
+header{
+  display: flex;
+}
+
+nav{
+  width: 100vw;
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: #102634;
+	font-size: 20px;
+  align-items: center;
+}
+
+div.nav{
+  display: flex;
+  justify-content: center;
+}
+
+.nav a{
+  color: white;
+}
+
+nav a:hover{
+	color: #C2EAFF;
+}
+
+nav a div{
+  text-align: center;
+}
+
+.flash{
+  padding: 10px;
+}
+
+.flash.success{
+	border: 1px solid #21DB56;
+	background: #AEFFC5;
+}
+
+.flash.error{
+	border: 1px solid #FF4343;
+	background: #FF9C9C;
+}
+
+.title{
+  margin: 0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px dotted #cccccc;
+  font: inherit;
+  font-weight: 500;
+  color: #58595b;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.about{
+  gap: 10px;
+}
+
+.about .info{
+  padding: 5px;
+  text-indent: 4em;
+  line-height: 1.5;
+}
+
+.about .clinics{
+  padding: 5px;
+  text-indent: 4em;
+  line-height: 1.5;
+}
+
+.image-block img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+table.prices{
+  border-collapse: collapse;
+  width: 100%;
+  border: 2px solid black;
+  padding: 1px 
+}
+
+table.prices th{
+  border: 2px solid grey;
+}
+
+table.prices td{
+  padding: 0 10px;
+  text-align: left;
+  border: 2px solid grey;
+}
+
+table.prices td.price{
+  padding-left: 22px;
+  width: 80px;
+}
+
+details{
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px 8px;
+  max-width: 33vw;
+  min-width: 320px;
+}
+
+.prices-list{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.doctor-card{
+  width: 100%;
+}
+
+.doctor__photo{
+  display: flex;
+  width: 140px;
+  height: 140px;
+  margin-right: 5px;
+}
+
+.doctor__info{
+  display: flex;
+  border-top: 2px dotted #cccccc;
+  border-bottom: 2px dotted #cccccc;
+}
+
+.doctor__text-info{
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.auth-form{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.auth-form input{
+  border-radius: calc(0.625rem - 2px);
+  padding-inline: 1rem;
+  padding-block: 0.75rem;
+}
+
+.auth-form input[type=checkbox]{
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.auth-form .remain{
+  display: flex;
+  align-items: center;
+}
+
+.auth-form .signup-button{
+  margin-top: 8px;
+}
+
+.reffer-url{
+  margin-top: 4px;
+  margin-left: 2px;
+  display: inline-block;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  margin: 3px;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.appointment-date, .appointment-time{
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.4em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.available{
+  background-color: #9BFFD2;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.available:hover{
+  border-color: #646cff;
+}
+
+.available:focus,
+.available:focus-visible{
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.unavailable{
+  background-color: #B9CBCF;
+  transition: border-color 0.25s;
+  cursor: default;
+}
+
+.take-appointment{
+  margin-top: 4px;
+  padding: 4px 20px;
+  border-radius: 4px;
+  background-color: #B9CBCF;
+  text-transform: uppercase;
+  text-align: center;
+  width: 95px;
+  font-size: 12px;
+}
+
+.profile-page{
+  margin-left: 10px;
+}
+
+.logout{
+  margin-top: 2px;
+}
+
+.user_appointment{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cancel_appointment{
+  border-radius: 6px;
+  padding-inline: 5px;
+  padding-block: 5px;
+}

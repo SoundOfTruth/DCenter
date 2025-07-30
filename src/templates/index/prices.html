@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <h2 class="title">
+     Услуги и цены
+  </h2>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+<div class="prices-list">
+{% for speciality in specialities %}
+  <details>
+    <summary><b>{{speciality.name}}</b></summary>
+    <table class="prices">
+      <thead>
+        <tr>
+          <th>Услуга</th>
+          <th>Стоимость</th>
+        </tr>
+      </thead>
+      {% for service in speciality.services %}
+      <tbody align="center">
+        <tr>
+          <td>{{service.name}}</td>
+          <td class="price">{{service.price}}</td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+  </details>
+{% endfor %}
+</div>
+
+{% endblock %}

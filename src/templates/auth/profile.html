@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <h2 class="title">
+    Профиль
+  </h2>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<div class="profile-page">
+  <h3>Ваши данные</h3>
+  <p>ФИО: {{ current_user.fullname }}</p>
+  <p>Почта: {{ current_user.email }}</p>
+  <div class="reffer-url logout">
+    <a href="{{ url_for('auth.logout') }}">
+      Выйти из аккаунта
+    </a>
+  </div>
+  <h3>Ваши записи на приём</h3>
+  {% if not appointments -%}
+  <p>У вас ещё нет записей на приём</p>
+  {% else -%}
+    {% for appointment in appointments %}
+      <div class="user_appointment">
+        <div>
+          Клиника: Dcenter на {{ appointment.doctor.clinic.address }}
+        </div>
+        <div>
+          Дата: {{ appointment.date.strftime("%d.%m.%Y") }}
+        </div>
+        <div>
+          Время: {{ appointment.date.strftime("%H:%M") }}
+        </div>
+        <div>
+          Врач: {{ appointment.doctor.fullname }}
+        </div>
+        <form action="{{ url_for('appointment.drop', id=appointment.id) }}" method="post">
+          <input type="submit" value="Отменить запись" class="cancel_appointment"/>
+        </form>
+      </div>
+    {% endfor %}
+  {% endif -%}
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <h2 class="title">
+    Запись на приём
+  </h2>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+  <div class="table">
+    {%  if not appointments %}
+    <div>
+      Сейчас нет свободного времени для записи
+    </div>
+    {% else %}
+    <div class="row">
+      {% for appointment in appointments %}
+        <div class="appointment-date">
+          <b>{{ appointment['date'] }}</b>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      {% for appointment in appointments %}
+        <div class="column">
+          {% for record in appointment['records'] %}
+            {% if record['patient_id'] %}
+              <div class="appointment-time unavailable">
+                {{ record['time'] }}
+              </div>
+            {% else %}
+              <form action="{{ url_for('appointment.take', id=record['id']) }}" method="post">
+                <input type="submit" value="{{ record['time'] }}" class="appointment-time available"/>
+              </form>
+              <!-- <a href="{{ url_for('appointment.take', id=record['id']) }}">
+                <div class="appointment-time available">
+                  {{ record['time'] }}
+                </div>
+              </a> -->
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+{% endblock %}
