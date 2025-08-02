@@ -74,7 +74,7 @@ def take(id: int):
         is_taken = AppointmentService(session).take(id, current_user.id)
     message, status = "Вы успешно записались на приём", "success"
     if not is_taken:
-        message, status = "Ошибка", "error"
+        message, status = "Ошибка создания записи", "error"
     flash(message, status)
     return redirect(url_for("auth.profile"))
 
@@ -84,9 +84,9 @@ def take(id: int):
 def drop(id: int):
     if request.method == "POST":
         with session_factory() as session:
-            appointment = AppointmentService(session).get(id)
-            if appointment and appointment.patient_id == current_user.id:
-                appointment.patient_id = None
-                session.commit()
-                flash("Запись успешно отменена", "success")
+            is_droped = AppointmentService(session).drop(id, current_user.id)
+        message, status = "Вы успешно отменили запись на приём", "success"
+        if not is_droped:
+            message, status = "Ошибка отмены записи", "error"
+        flash(message, status)
     return redirect(url_for("auth.profile"))

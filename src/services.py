@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-from sqlalchemy import select, and_, func, cast, Date
+from sqlalchemy import select, and_, func, cast, Date, update
 from sqlalchemy.orm import Session, selectinload, joinedload
 from sqlalchemy.exc import IntegrityError
 
@@ -105,7 +105,7 @@ class AppointmentService(BaseService):
         )
         return self.session.scalars(stmt).all()  # type: ignore
 
-    def take(self, id: int, user_id):
+    def take(self, id: int, user_id: int):
         stmt = select(Appointment).where(Appointment.id == id)
         appointment = self.session.scalar(stmt)
         if (
@@ -125,3 +125,11 @@ class AppointmentService(BaseService):
             )
         )
         return self.session.scalars(stmt).all()  # type: ignore
+
+    def drop(self, id: int, user_id: int) -> bool:
+        stmt = update(Appointment).where(
+            and_(Appointment.id == id, Appointment.patient_id == user_id)
+        ).values(patient_id=None).returning(Appointment.id)
+        res = self.session.execute(stmt)
+        self.session.commit()
+        return bool(res.scalar())
